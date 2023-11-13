@@ -45,7 +45,7 @@ void loop()
   last_loop_time += LOOP_INTERVAL;
 
   a_value = analogRead(PIN_IR);
-  dist_raw = ((6762.0 / (a_value - 9.0)) - 4.0) * 10.0;
+  dist_raw = ((6762.0 / (a_value - 9.0)) - 4.0) * 10.0 - 60.0;
 
   if ((dist_raw == 0.0) || (dist_raw > _DIST_MAX)) {
     dist_raw = dist_prev;           // Cut higher than maximum
